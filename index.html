@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>テイルズウィーバー経験値計算</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			<h1>テイルズウィーバー経験値計算</h1>
+			<p class="lead">C:\Nexon\TalesWeaver\ChatLog からチャットログを開いて計算したい箇所をコピー＆ペーストしてください。</p>
+
+			<form class="w-100">
+				<textarea id="input" class="w-100" style="height: 200px;" placeholder="チャットログ入力欄"></textarea>
+				<input type="button" value="計算する" onClick="calcurate()" class="w-100">
+			</form>
+
+			<div id="output" class="w-100" style="margin-top: 50px;"></div>
+		</div>
+
+		<script src="main.js"></script>
+	</body>
+</html>
