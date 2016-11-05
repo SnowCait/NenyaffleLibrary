@@ -5,8 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>テイルズウィーバー経験値計算</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">-->
 		<script>
+			console.log("loading.");
 			var ExpEntity = function(exp, hours, minutes, seconds) {
 				this.Exp = exp;
 				this.Hours = hours;
@@ -15,6 +16,7 @@
 			};
 
 			function aggregate(log) {
+				console.log("aggregate.");
 				var exps = [];
 
 				var lines = log.split("\n");
@@ -38,12 +40,14 @@
 			}
 
 			function calcurate() {
+				console.log("calcurate.");
 				var log = document.getElementById("input");
 				var result = document.getElementById("output");
 
 				var exps = aggregate(log.value);
 
 				if (exps.length <= 0) {
+					console.log("not found.")
 					return;
 				}
 
