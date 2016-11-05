@@ -5,9 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>テイルズウィーバー経験値計算</title>
-		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
 		<script>
-			console.log("loading.");
 			var ExpEntity = function(exp, hours, minutes, seconds) {
 				this.Exp = exp;
 				this.Hours = hours;
@@ -16,7 +15,6 @@
 			};
 
 			function aggregate(log) {
-				console.log("aggregate.");
 				var exps = [];
 
 				var lines = log.split("\n");
@@ -40,14 +38,13 @@
 			}
 
 			function calcurate() {
-				console.log("calcurate.");
 				var log = document.getElementById("input");
 				var result = document.getElementById("output");
 
 				var exps = aggregate(log.value);
 
 				if (exps.length <= 0) {
-					console.log("not found.")
+					result.innerText = "経験値を取得できませんでした。";
 					return;
 				}
 
@@ -75,14 +72,14 @@
 	<body>
 		<div class="container">
 			<h1>テイルズウィーバー経験値計算</h1>
-			<p class="lead">C:\Nexon\TalesWeaver\ChatLog からチャットログを開いて計算したい箇所をコピー＆ペーストしてください。</p>
+			<p class="lead">C:\Nexon\TalesWeaver\ChatLog からチャットログを開いて計算したい箇所をコピー＆ペースト。</p>
 
 			<form class="w-100">
 				<textarea id="input" class="w-100" style="height: 200px;" placeholder="チャットログ入力欄"></textarea>
 				<input type="button" value="計算する" onClick="calcurate()" class="w-100">
 			</form>
 
-			<div id="output" class="w-100" style="margin-top: 50px;"></div>
+			<div id="output" class="w-100" style="margin-top: 50px;">ここに結果が出力されます。</div>
 		</div>
 	</body>
 </html>
